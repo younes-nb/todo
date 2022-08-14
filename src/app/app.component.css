@@ -1,0 +1,12 @@
+header {
+  margin-top: 4rem;
+}
+
+.container {
+  width: 35vw;
+}
+
+#header-title {
+  color: white;
+  font-weight: 700;
+}

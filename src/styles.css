@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: JosefinSans;
+  src: url("assets/fonts/JosefinSans-Regular.ttf");
+}
+
+:root {
+  --font-primary: JosefinSans, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-image: url("assets/backgrounds/bg-desktop-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
