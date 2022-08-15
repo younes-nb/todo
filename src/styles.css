@@ -42,4 +42,7 @@ body {
   background-color: var(--dark-bg-color);
 }
 
-
+input{
+  outline: none;
+  border: none;
+}
