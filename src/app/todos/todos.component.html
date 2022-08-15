@@ -1,0 +1,12 @@
+<main>
+  <div class="container">
+    <input (keydown.enter)="addTodo($event)" type="text" name="create-todo" class="p-3 rounded mt-5 w-100"
+           id="create-todo"
+           placeholder="Create a new todo...">
+    <ul id="todos-container">
+      <ng-container *ngFor="let todo of getTodos()">
+        <app-todo [todo]="todo"></app-todo>
+      </ng-container>
+    </ul>
+  </div>
+</main>

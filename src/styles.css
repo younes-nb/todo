@@ -26,9 +26,13 @@ ul {
   list-style: none;
 }
 
+.container {
+  width: 35vw;
+}
+
 body {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 300px;
 
 }
 
@@ -42,7 +46,7 @@ body {
   background-color: var(--dark-bg-color);
 }
 
-input{
+input {
   outline: none;
   border: none;
 }
