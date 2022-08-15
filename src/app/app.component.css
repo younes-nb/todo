@@ -10,3 +10,8 @@ header {
   color: white;
   font-weight: 700;
 }
+
+svg {
+  cursor: pointer;
+}
+

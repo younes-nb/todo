@@ -5,6 +5,10 @@
 
 :root {
   --font-primary: JosefinSans, sans-serif;
+  --light-bg-color: snow;
+  --light-bg-image: url("assets/backgrounds/bg-desktop-light.jpg");
+  --dark-bg-color: hsl(235, 21%, 11%);
+  --dark-bg-image: url("assets/backgrounds/bg-desktop-dark.jpg")
 }
 
 * {
@@ -23,7 +27,19 @@ ul {
 }
 
 body {
-  background-image: url("assets/backgrounds/bg-desktop-light.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
 }
+
+.light-body {
+  background-image: var(--light-bg-image);
+  background-color: var(--light-bg-color);
+}
+
+.dark-body {
+  background-image: var(--dark-bg-image);
+  background-color: var(--dark-bg-color);
+}
+
+
