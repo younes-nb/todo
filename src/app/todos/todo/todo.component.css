@@ -1,0 +1,54 @@
+.todo > * {
+  cursor: pointer;
+}
+
+.task {
+  font-weight: 400;
+}
+
+.remove-todo {
+  display: none;
+}
+
+.remove-todo:hover {
+  display: block;
+}
+
+.task:hover ~ .remove-todo {
+  display: block;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  height: 21px;
+  width: 21px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: .10s;
+  border-radius: 100%;
+  border: 1px solid hsl(236, 33%, 92%);
+  background-color: white;
+}
+
+input[type="checkbox"]:checked {
+  background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+input[type="checkbox"]:before, input[type="checkbox"]:checked:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+}
+
+input[type="checkbox"]:checked:before {
+  content: '✔';
+}
+
+input[type="checkbox"]:hover {
+  border: 1px solid hsl(233, 11%, 84%);
+}
+
