@@ -32,4 +32,16 @@ export class TodosComponent implements OnInit {
     button.classList.add("active-filter");
     this.todosService.filter(button.innerText);
   }
+
+  clearCompletedTodos() {
+    this.todosService.clearCompleted();
+  }
+
+  nothingToShow(): boolean {
+    for (let todo of this.todosService.get()) {
+      if (todo.isShowing)
+        return false;
+    }
+    return true;
+  }
 }

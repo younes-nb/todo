@@ -40,4 +40,8 @@ export class TodosService {
         break;
     }
   }
+
+  clearCompleted() {
+    this.todos = this.todos.filter(todo => !todo.isDone)
+  }
 }

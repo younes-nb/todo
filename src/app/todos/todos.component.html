@@ -9,15 +9,19 @@
           <app-todo [todo]="todo"></app-todo>
         </ng-container>
       </ng-container>
+      <ng-container *ngIf="nothingToShow()">
+        <p class="p-2 m-0 text-center text-muted">There is nothing to show.</p>
+      </ng-container>
       <ng-container *ngIf="getTodos().length">
-        <footer class="d-flex justify-content-between align-items-center p-2">
+        <footer
+          [ngClass]="nothingToShow() ? 'd-flex border-top justify-content-between align-items-center p-2' : 'd-flex justify-content-between align-items-center p-2'">
           <p class="footer-item m-0">items left</p>
           <div id="filter-todo">
             <button (click)="filterTodos($event)" class="footer-item active-filter btn shadow-none">All</button>
             <button (click)="filterTodos($event)" class="footer-item btn mx-2 shadow-none">Active</button>
             <button (click)="filterTodos($event)" class="footer-item btn shadow-none">Completed</button>
           </div>
-          <button class="footer-item btn shadow-none">Clear Completed</button>
+          <button (click)="clearCompletedTodos()" class="footer-item btn shadow-none">Clear Completed</button>
         </footer>
       </ng-container>
     </ul>

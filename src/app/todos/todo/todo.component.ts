@@ -16,10 +16,6 @@ export class TodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  completeTodo(todo: Todo, event: Event) {
-    todo.isDone = (event.target as HTMLInputElement).checked;
-  }
-
   removeTodo(todo: Todo) {
     this.todosService.remove(todo);
   }
