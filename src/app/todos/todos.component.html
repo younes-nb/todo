@@ -15,7 +15,7 @@
       <ng-container *ngIf="getTodos().length">
         <footer
           [ngClass]="nothingToShow() ? 'd-flex border-top justify-content-between align-items-center p-2' : 'd-flex justify-content-between align-items-center p-2'">
-          <p class="footer-item m-0">items left</p>
+          <p class="footer-item m-0">{{getItemsLeft()}} items left</p>
           <div id="filter-todo">
             <button (click)="filterTodos($event)" class="footer-item active-filter btn shadow-none">All</button>
             <button (click)="filterTodos($event)" class="footer-item btn mx-2 shadow-none">Active</button>

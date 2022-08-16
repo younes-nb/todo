@@ -44,4 +44,13 @@ export class TodosComponent implements OnInit {
     }
     return true;
   }
+
+  getItemsLeft(): number {
+    let count = 0;
+    for (let todo of this.todosService.get()) {
+      if (!todo.isDone)
+        count++;
+    }
+    return count;
+  }
 }
