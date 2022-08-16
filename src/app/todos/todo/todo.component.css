@@ -3,7 +3,7 @@
 }
 
 .task {
-  font-weight: 400;
+  color: var(--light-vary-dark-color);
 }
 
 .remove-todo {
@@ -26,7 +26,7 @@ input[type="checkbox"] {
   position: relative;
   -webkit-transition: .10s;
   border-radius: 100%;
-  border: 1px solid hsl(236, 33%, 92%);
+  border: 1px solid var(--light-very-light-color);
   background-color: white;
 }
 
@@ -49,6 +49,6 @@ input[type="checkbox"]:checked:before {
 }
 
 input[type="checkbox"]:hover {
-  border: 1px solid hsl(233, 11%, 84%);
+  border: 1px solid var(--light-light-color);
 }
 

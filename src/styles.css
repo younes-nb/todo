@@ -4,18 +4,27 @@
 }
 
 :root {
-  --font-primary: JosefinSans, sans-serif;
-  --light-bg-color: snow;
+  --primary-font: JosefinSans, sans-serif;
+  --primary-color: hsl(220, 98%, 61%);
   --light-bg-image: url("assets/backgrounds/bg-desktop-light.jpg");
+  --light-bg-color: snow;
+  --light-very-light-color: hsl(236, 33%, 92%);
+  --light-light-color: hsl(233, 11%, 84%);
+  --light-dark-color: hsl(236, 9%, 61%);
+  --light-vary-dark-color: hsl(235, 19%, 35%);
+  --dark-bg-image: url("assets/backgrounds/bg-desktop-dark.jpg");
   --dark-bg-color: hsl(235, 21%, 11%);
-  --dark-bg-image: url("assets/backgrounds/bg-desktop-dark.jpg")
+  /*--dark-very-light-color: hsl(236, 33%, 92%);*/
+  /*--dark-light-color: hsl(233, 11%, 84%);*/
+  /*--dark-dark-color: hsl(236, 9%, 61%);*/
+  /*--dark-vary-dark-color: hsl(235, 19%, 35%);*/
 }
 
 * {
   margin: 0;
   padding: 0 !important;
   box-sizing: border-box;
-  font-family: var(--font-primary);
+  font-family: var(--primary-font);
 }
 
 a {

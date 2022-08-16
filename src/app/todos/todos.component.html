@@ -1,11 +1,22 @@
 <main>
   <div class="container">
-    <input (keydown.enter)="addTodo($event)" type="text" name="create-todo" class="p-3 rounded mt-5 w-100"
+    <input (keydown.enter)="addTodo($event)" type="text" name="create-todo" class="p-3 rounded mt-5 w-100 shadow-sm"
            id="create-todo"
            placeholder="Create a new todo...">
     <ul id="todos-container" class="mt-4 rounded bg-white shadow-sm">
       <ng-container *ngFor="let todo of getTodos()">
         <app-todo [todo]="todo"></app-todo>
+      </ng-container>
+      <ng-container *ngIf="getTodos().length">
+        <footer class="d-flex justify-content-between align-items-center p-2">
+          <p class="footer-item m-0">items left</p>
+          <div id="filter-todo">
+            <button class="footer-item active-filter btn">All</button>
+            <button class="footer-item btn mx-2">Active</button>
+            <button class="footer-item btn">Completed</button>
+          </div>
+          <button class="footer-item btn">Clear Completed</button>
+        </footer>
       </ng-container>
     </ul>
   </div>
