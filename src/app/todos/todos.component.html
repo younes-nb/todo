@@ -5,17 +5,19 @@
            placeholder="Create a new todo...">
     <ul id="todos-container" class="mt-4 rounded bg-white shadow-sm">
       <ng-container *ngFor="let todo of getTodos()">
-        <app-todo [todo]="todo"></app-todo>
+        <ng-container *ngIf="todo.isShowing">
+          <app-todo [todo]="todo"></app-todo>
+        </ng-container>
       </ng-container>
       <ng-container *ngIf="getTodos().length">
         <footer class="d-flex justify-content-between align-items-center p-2">
           <p class="footer-item m-0">items left</p>
           <div id="filter-todo">
-            <button class="footer-item active-filter btn">All</button>
-            <button class="footer-item btn mx-2">Active</button>
-            <button class="footer-item btn">Completed</button>
+            <button (click)="filterTodos($event)" class="footer-item active-filter btn shadow-none">All</button>
+            <button (click)="filterTodos($event)" class="footer-item btn mx-2 shadow-none">Active</button>
+            <button (click)="filterTodos($event)" class="footer-item btn shadow-none">Completed</button>
           </div>
-          <button class="footer-item btn">Clear Completed</button>
+          <button class="footer-item btn shadow-none">Clear Completed</button>
         </footer>
       </ng-container>
     </ul>

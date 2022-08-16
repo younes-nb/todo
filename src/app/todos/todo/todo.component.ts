@@ -17,7 +17,7 @@ export class TodoComponent implements OnInit {
   }
 
   completeTodo(todo: Todo, event: Event) {
-    todo.done = (event.target as HTMLInputElement).checked;
+    todo.isDone = (event.target as HTMLInputElement).checked;
   }
 
   removeTodo(todo: Todo) {

@@ -25,4 +25,11 @@ export class TodosComponent implements OnInit {
       input.value = "";
     }
   }
+
+  filterTodos(event: Event) {
+    let button = event.target as HTMLButtonElement;
+    document.querySelectorAll(".footer-item").forEach(footerItem => footerItem.classList.remove("active-filter"));
+    button.classList.add("active-filter");
+    this.todosService.filter(button.innerText);
+  }
 }
