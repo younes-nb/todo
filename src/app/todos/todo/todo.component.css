@@ -6,6 +6,11 @@
   color: var(--light-vary-dark-color);
 }
 
+.completed-task {
+  text-decoration: line-through;
+  color: var(--light-dark-color);
+}
+
 .remove-todo {
   display: none;
 }
