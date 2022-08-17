@@ -22,6 +22,11 @@ $dark-secondary-text-color: hsl(234, 11%, 52%);
 $dark-checkbox-border: 1px solid hsl(233, 14%, 35%);
 $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
 
+@mixin drag-preview {
+  border-radius: 5px;
+  width: 35vw !important;
+  border: none;
+}
 
 @mixin light-mode {
   background-image: $light-bg-image;
@@ -30,7 +35,7 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
     background-color: $light-primary-bg-color;
   }
 
-  #nothing-to-show {
+  #nothing-to-show, #footer {
     color: $light-secondary-text-color;
   }
 
@@ -49,7 +54,6 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
   .completed-task {
     color: $light-secondary-text-color;
   }
-
   #check {
     border: $light-checkbox-border;
     background-color: $light-primary-bg-color;
@@ -57,6 +61,12 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
     &:hover {
       border: $light-checkbox-border-hover;
     }
+  }
+
+  .cdk-drag-preview {
+    @include drag-preview;
+    background-color: $light-primary-bg-color;
+    box-shadow: 0 .5rem 1rem rgba(#000, .15);
   }
 }
 
@@ -72,7 +82,7 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
     color: $dark-primary-text-color;
   }
 
-  #nothing-to-show, .footer-item {
+  #nothing-to-show, .footer-item, #footer {
     color: $dark-secondary-text-color;
   }
 
@@ -104,6 +114,11 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
       border: $dark-checkbox-border-hover;
     }
   }
+
+  .cdk-drag-preview {
+    @include drag-preview;
+    background-color: $dark-secondary-bg-color;
+  }
 }
 
 * {
@@ -111,7 +126,7 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
   padding: 0 !important;
   box-sizing: border-box;
   font-family: $primary-font;
-  transition: all 0.5s;
+  transition: color, background 0.5s;
 }
 
 body {
@@ -150,5 +165,14 @@ input {
 }
 
 
+.cdk-drag-placeholder {
+  opacity: 0;
+}
 
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
 
+#todos-container.cdk-drop-list-dragging .todo:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) !important;
+}

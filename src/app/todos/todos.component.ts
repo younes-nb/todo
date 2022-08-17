@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TodosService} from "./todos.service";
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todos',
@@ -53,5 +54,9 @@ export class TodosComponent implements OnInit {
         count++;
     }
     return count;
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.todosService.get(), event.previousIndex, event.currentIndex);
   }
 }

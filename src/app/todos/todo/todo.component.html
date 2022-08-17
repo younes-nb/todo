@@ -1,4 +1,4 @@
-<li class="todo p-3 d-flex w-100 border-bottom align-items-center">
+<li cdkDrag class="todo p-3 d-flex w-100 border-bottom align-items-center">
   <input id="check" (change)="todo.isDone = !todo.isDone" [checked]="todo.isDone" type="checkbox" class="me-3">
   <p (click)="todo.isDone = !todo.isDone"
      class="task m-0 w-100"

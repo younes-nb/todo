@@ -2,7 +2,7 @@
   <div class="container">
     <input (keydown.enter)="addTodo($event)" type="text" name="create-todo" class="p-3 rounded mt-5 w-100 shadow-sm"
            id="create-todo" placeholder="Create a new todo...">
-    <ul id="todos-container" class="mt-4 rounded shadow-sm">
+    <ul cdkDropList (cdkDropListDropped)="drop($event)" id="todos-container" class="mt-4 rounded shadow-sm">
       <ng-container *ngFor="let todo of getTodos()">
         <ng-container *ngIf="todo.isShowing">
           <app-todo [todo]="todo"></app-todo>
