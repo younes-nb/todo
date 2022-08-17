@@ -1,0 +1,154 @@
+@font-face {
+  font-family: JosefinSans;
+  src: url("assets/fonts/JosefinSans-Regular.ttf");
+}
+
+$primary-font: JosefinSans, sans-serif;
+$primary-color: hsl(220, 98%, 61%);
+
+$light-bg-image: url("assets/backgrounds/bg-desktop-light.jpg");
+$light-primary-bg-color: snow;
+$light-checkbox-border: 1px solid hsl(236, 33%, 92%);
+$light-checkbox-border-hover: 1px solid hsl(233, 11%, 84%);
+$light-primary-text-color: hsl(235, 19%, 35%);
+$light-secondary-text-color: hsl(236, 9%, 61%);
+
+$dark-bg-image: url("assets/backgrounds/bg-desktop-dark.jpg");
+$dark-primary-bg-color: hsl(235, 21%, 11%);
+$dark-secondary-bg-color: hsl(235, 24%, 19%);
+$dark-primary-text-color: hsl(234, 39%, 85%);
+$dark-primary-text-color-hover: hsl(236, 33%, 92%);
+$dark-secondary-text-color: hsl(234, 11%, 52%);
+$dark-checkbox-border: 1px solid hsl(233, 14%, 35%);
+$dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
+
+
+@mixin light-mode {
+  background-image: $light-bg-image;
+
+  &, #create-todo, #todos-container {
+    background-color: $light-primary-bg-color;
+  }
+
+  #nothing-to-show {
+    color: $light-secondary-text-color;
+  }
+
+  .footer-item {
+    color: $light-secondary-text-color;
+  }
+
+  .footer-item:hover {
+    color: $light-primary-text-color;
+  }
+
+  .task {
+    color: $light-primary-text-color;
+  }
+
+  .completed-task {
+    color: $light-secondary-text-color;
+  }
+
+  #check {
+    border: $light-checkbox-border;
+    background-color: $light-primary-bg-color;
+
+    &:hover {
+      border: $light-checkbox-border-hover;
+    }
+  }
+}
+
+@mixin dark-mode {
+  background-image: $dark-bg-image;
+  background-color: $dark-primary-bg-color;
+
+  #create-todo, #todos-container {
+    background-color: $dark-secondary-bg-color;
+  }
+
+  #create-todo {
+    color: $dark-primary-text-color;
+  }
+
+  #nothing-to-show, .footer-item {
+    color: $dark-secondary-text-color;
+  }
+
+  .footer-item:hover {
+    color: $dark-primary-text-color-hover;
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid hsl(233, 14%, 35%) !important;
+  }
+
+  .border-top {
+    border-top: 1px solid hsl(233, 14%, 35%) !important;
+  }
+
+  .task {
+    color: $dark-primary-text-color;
+  }
+
+  .completed-task {
+    color: $dark-secondary-text-color;
+  }
+
+  #check {
+    border: $dark-checkbox-border;
+    background-color: $dark-secondary-bg-color;
+
+    &:hover {
+      border: $dark-checkbox-border-hover;
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0 !important;
+  box-sizing: border-box;
+  font-family: $primary-font;
+  transition: all 0.5s;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: 100% 300px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.light-theme {
+  @include light-mode;
+}
+
+.dark-theme {
+  @include dark-mode;
+}
+
+.active-filter {
+  color: $primary-color !important;
+}
+
+.container {
+  width: 35vw;
+}
+
+
+
+

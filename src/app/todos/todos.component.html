@@ -1,21 +1,26 @@
 <main>
   <div class="container">
     <input (keydown.enter)="addTodo($event)" type="text" name="create-todo" class="p-3 rounded mt-5 w-100 shadow-sm"
-           id="create-todo"
-           placeholder="Create a new todo...">
-    <ul id="todos-container" class="mt-4 rounded bg-white shadow-sm">
+           id="create-todo" placeholder="Create a new todo...">
+    <ul id="todos-container" class="mt-4 rounded shadow-sm">
       <ng-container *ngFor="let todo of getTodos()">
         <ng-container *ngIf="todo.isShowing">
           <app-todo [todo]="todo"></app-todo>
         </ng-container>
       </ng-container>
       <ng-container *ngIf="nothingToShow()">
-        <p class="p-2 m-0 text-center text-muted">There is nothing to show.</p>
+        <p id="nothing-to-show" class="p-2 m-0 text-center">There is nothing to show.</p>
       </ng-container>
       <ng-container *ngIf="getTodos().length">
         <footer
-          [ngClass]="nothingToShow() ? 'd-flex border-top justify-content-between align-items-center p-2' : 'd-flex justify-content-between align-items-center p-2'">
-          <p class="footer-item m-0">{{getItemsLeft()}} items left</p>
+          class="d-flex justify-content-between align-items-center p-2"
+          [ngClass]="nothingToShow() ? 'border-top' : ''">
+          <ng-container *ngIf="getItemsLeft()">
+            <p class="footer-item m-0">{{getItemsLeft()}} items left.</p>
+          </ng-container>
+          <ng-container *ngIf="!getItemsLeft()">
+            <p class="footer-item m-0">All completed.</p>
+          </ng-container>
           <div id="filter-todo">
             <button (click)="filterTodos($event)" class="footer-item active-filter btn shadow-none">All</button>
             <button (click)="filterTodos($event)" class="footer-item btn mx-2 shadow-none">Active</button>

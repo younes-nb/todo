@@ -1,0 +1,53 @@
+.todo {
+  & > * {
+    cursor: pointer;
+  }
+
+  .task {
+    font-weight: 400;
+
+    &:hover ~ .remove-todo {
+      display: block;
+    }
+  }
+
+  .completed-task {
+    text-decoration: line-through;
+  }
+
+  .remove-todo {
+    display: none;
+
+    &:hover {
+      display: block;
+    }
+  }
+
+  #check {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 21px;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: .10s;
+    border-radius: 100%;
+
+    &:checked {
+      background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    }
+
+    &:before, &:checked:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    &:checked:before {
+      content: '\2713';
+    }
+  }
+}

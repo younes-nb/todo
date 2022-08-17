@@ -1,7 +1,8 @@
 <li class="todo p-3 d-flex w-100 border-bottom align-items-center">
-  <input (change)="todo.isDone = !todo.isDone" [checked]="todo.isDone" type="checkbox" class="me-3">
+  <input id="check" (change)="todo.isDone = !todo.isDone" [checked]="todo.isDone" type="checkbox" class="me-3">
   <p (click)="todo.isDone = !todo.isDone"
-     [ngClass]="todo.isDone ? 'task completed-task m-0 w-100' : 'task m-0 w-100'">{{todo.task}}</p>
+     class="task m-0 w-100"
+     [ngClass]="todo.isDone ? 'completed-task' : ''">{{todo.task}}</p>
   <svg (click)="removeTodo(todo)" class="ms-auto remove-todo" xmlns="http://www.w3.org/2000/svg" width="19" height="19">
     <path fill="hsl(236, 9%, 61%)" fill-rule="evenodd"
           d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/>

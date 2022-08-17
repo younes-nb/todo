@@ -1,12 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TodosService} from "./todos.service";
 
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  @Input() isDarkMode: boolean = false;
 
   constructor(private todosService: TodosService) {
   }
