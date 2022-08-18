@@ -6,7 +6,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 ### The challenge
 
-Users should be able to:
+Users are able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
@@ -16,15 +16,12 @@ Users should be able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
-
-[//]: # (- **Bonus**: Drag and drop to reorder items on the list)
-
-### Screenshot
+- Drag and drop to reorder items on the list
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/angular-sass-_xknfoyYgh
+- Live Site URL: https://todo-app-frontendmentor.web.app/
 
 ## My process
 

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TodosService} from "./todos.service";
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-todos',
@@ -9,11 +10,13 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class TodosComponent implements OnInit {
   @Input() isDarkMode: boolean = false;
+  mobileFooter: boolean = false;
 
-  constructor(private todosService: TodosService) {
+  constructor(private todosService: TodosService, private responsive: BreakpointObserver) {
   }
 
   ngOnInit(): void {
+    this.responsive.observe(Breakpoints.HandsetPortrait).subscribe(result => this.mobileFooter = result.matches)
   }
 
   getTodos() {

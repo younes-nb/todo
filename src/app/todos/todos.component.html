@@ -1,5 +1,5 @@
-<main>
-  <div class="container">
+<main class="d-flex justify-content-center row px-md-0 px-5">
+  <div class="col-xl-4 col-md-6 col-sm-12">
     <input (keydown.enter)="addTodo($event)" type="text" name="create-todo" class="p-3 rounded mt-5 w-100 shadow-sm"
            id="create-todo" placeholder="Create a new todo...">
     <ul cdkDropList (cdkDropListDropped)="drop($event)" id="todos-container" class="mt-4 rounded shadow-sm">
@@ -21,14 +21,23 @@
           <ng-container *ngIf="!getItemsLeft()">
             <p class="footer-item m-0">All completed.</p>
           </ng-container>
-          <div id="filter-todo">
-            <button (click)="filterTodos($event)" class="footer-item active-filter btn shadow-none">All</button>
-            <button (click)="filterTodos($event)" class="footer-item btn mx-2 shadow-none">Active</button>
-            <button (click)="filterTodos($event)" class="footer-item btn shadow-none">Completed</button>
-          </div>
+          <ng-container *ngIf="!mobileFooter">
+            <div class="filter-todo">
+              <button (click)="filterTodos($event)" class="footer-item active-filter btn shadow-none">All</button>
+              <button (click)="filterTodos($event)" class="footer-item btn mx-2 shadow-none">Active</button>
+              <button (click)="filterTodos($event)" class="footer-item btn shadow-none">Completed</button>
+            </div>
+          </ng-container>
           <button (click)="clearCompletedTodos()" class="footer-item btn shadow-none">Clear Completed</button>
         </footer>
       </ng-container>
     </ul>
+    <ng-container *ngIf="mobileFooter && getTodos().length">
+      <div id="mobile-footer" class="filter-todo d-flex justify-content-center p-2 rounded shadow">
+        <button (click)="filterTodos($event)" class="footer-item active-filter btn shadow-none">All</button>
+        <button (click)="filterTodos($event)" class="footer-item btn mx-5 shadow-none">Active</button>
+        <button (click)="filterTodos($event)" class="footer-item btn shadow-none">Completed</button>
+      </div>
+    </ng-container>
   </div>
 </main>

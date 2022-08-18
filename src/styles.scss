@@ -31,7 +31,7 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
 @mixin light-mode {
   background-image: $light-bg-image;
 
-  &, #create-todo, #todos-container {
+  &, #create-todo, #todos-container, #mobile-footer {
     background-color: $light-primary-bg-color;
   }
 
@@ -74,7 +74,7 @@ $dark-checkbox-border-hover: 1px solid $dark-secondary-text-color;
   background-image: $dark-bg-image;
   background-color: $dark-primary-bg-color;
 
-  #create-todo, #todos-container {
+  #create-todo, #todos-container, #mobile-footer {
     background-color: $dark-secondary-bg-color;
   }
 
@@ -160,8 +160,8 @@ input {
   color: $primary-color !important;
 }
 
-.container {
-  width: 35vw;
+.c {
+  padding: 0 2rem;
 }
 
 
